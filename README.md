@@ -2,6 +2,10 @@
 
 沿用原始 GitHub Pages 的純 HTML 架構。頁面、CSS 與少量導覽 JavaScript 均保留在 `index.html`，不需 Node.js、npm、框架或建置步驟。
 
+## 網站維護說明
+
+日後更新文字、更換照片、新增專案與重新部署，請參閱 [完整網站維護說明](website-maintenance-guide.md)。內含檔案對照表、修改範例、可複製的專案模板、部署檢查表與常見問題處理。
+
 ## 檔案
 
 - `index.html`：更新個人定位、響應式版面、無障礙導覽、搜尋與分享資訊。
@@ -9,7 +13,8 @@
 - `assets/avatar.png`：使用者提供的似顏繪，作為導覽列 Logo；以 CSS 聚焦頭肩，維持原桌機 36px、手機 31px 的 1:1 尺寸與圓角，使用 `object-fit: cover`，原圖不另行修圖。
 - `assets/project-01.png`：使用者提供的魚骨洞天專案畫面，可點擊開啟 Demo。
 - `assets/teacher-training.png`：使用者提供的 AI 教學代理人設計教師培訓現場照片，保留完整畫面。
-- `README.md`：預覽、內容維護與 GitHub Pages 部署說明。
+- `README.md`：專案概覽、預覽方式與維護說明入口。
+- `website-maintenance-guide.md`：文字與照片更新、新增專案、重新部署及常見問題的完整操作指南。
 
 ## 頁面區塊
 
