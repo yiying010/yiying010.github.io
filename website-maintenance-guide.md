@@ -12,6 +12,7 @@
 | 首頁主檔 | [index.html](https://github.com/yiying010/yiying010.github.io/blob/main/index.html) |
 | 圖片資料夾 | [assets](https://github.com/yiying010/yiying010.github.io/tree/main/assets) |
 | 部署進度 | [Actions](https://github.com/yiying010/yiying010.github.io/actions) |
+| 已發布備份 | [2026-10-28 Release 與還原步驟](https://github.com/yiying010/yiying010.github.io/releases/tag/backup-2026-10-28-18f675e)／[下載完整備份 ZIP](https://github.com/yiying010/yiying010.github.io/releases/download/backup-2026-10-28-18f675e/yiying-website-backup-2026-10-28-18f675e.zip) |
 | 魚骨洞天作品程式 | [yiying010/fishbone](https://github.com/yiying010/fishbone) |
 
 個人網站的檔案結構如下：
@@ -319,6 +320,34 @@ git push origin main
 | 本機預覽與線上不同 | 確認上傳了目前預覽的檔案，並等待部署完成後刷新正式網站。 |
 
 需要還原時，可從先前備份取出正確檔案，或在 GitHub 的檔案 History／提交歷史中找到之前版本，再將同一版本的 HTML 與對應圖片重新提交至 `main`。這樣能保留修改歷史，也會再次觸發部署。
+
+### 使用 2026-10-28 Release 備份還原
+
+- 備份日期：2026-10-28（Asia/Taipei）。
+- 版本標籤：`backup-2026-10-28-18f675e`。
+- 來源提交：[`18f675e84aa684756f8db8100111001917b6fbb2`](https://github.com/yiying010/yiying010.github.io/commit/18f675e84aa684756f8db8100111001917b6fbb2)。
+- [Release 說明頁](https://github.com/yiying010/yiying010.github.io/releases/tag/backup-2026-10-28-18f675e)
+- [下載完整網站備份 ZIP](https://github.com/yiying010/yiying010.github.io/releases/download/backup-2026-10-28-18f675e/yiying-website-backup-2026-10-28-18f675e.zip)（5,262,241 bytes）。
+
+1. 先從目前的 `main` 下載一份 ZIP，保留還原前的版本。
+2. 下載上述具名的備份 ZIP；在 Release 的 **Assets** 選擇 `yiying-website-backup-2026-10-28-18f675e.zip`，即可取得包含維護說明與校驗清單的完整備份。
+3. 解壓縮後確認有 `index.html`、`assets/`、`README.md`、`website-maintenance-guide.md`、`BACKUP-INFO.txt` 與 `SHA256SUMS.txt`。可依第 6 節先在本機預覽。
+4. 將備份中的 `assets/`、`index.html`、`README.md` 與 `website-maintenance-guide.md` 放回原儲存庫 `main` 分支根目錄。使用 GitHub 網頁上傳時先提交圖片，再提交首頁與文件，保留原本 Pages 設定及其他不相關檔案。
+5. 提交後依第 7、8 節確認 Actions 的 **pages build and deployment** 成功，並核對正式網站。
+
+若要確認下載完整性，在下載資料夾執行：
+
+```sh
+shasum -a 256 yiying-website-backup-2026-10-28-18f675e.zip
+```
+
+預期 SHA-256：
+
+```text
+f4ec25f0ee3231afd8601bc2e1a3e5d420c294384780e9d883830b2cbd4044d3
+```
+
+這是固定日期的歷史備份，不會自動包含後續修改，也不包含這次新增的下載連結。還原前請記下 Release 網址；日常更新仍以 `main` 的最新內容為準。這次僅補充文件入口，已發布的 ZIP 保持原檔與原校驗碼。
 
 本指南整理時的已驗證版本為 [`1fef97b`](https://github.com/yiying010/yiying010.github.io/commit/1fef97b5d8f1dee70013203bb55ecfa0736ea90f)，[對應部署紀錄](https://github.com/yiying010/yiying010.github.io/actions/runs/40619542714)已成功。之後若有新修改，請以新的成功版本作為備份基準。
 

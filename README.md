@@ -6,6 +6,17 @@
 
 日後更新文字、更換照片、新增專案與重新部署，請參閱 [完整網站維護說明](website-maintenance-guide.md)。內含檔案對照表、修改範例、可複製的專案模板、部署檢查表與常見問題處理。
 
+## 網站備份下載與還原
+
+- 備份日期：2026-10-28（Asia/Taipei）。
+- 備份版本：`backup-2026-10-28-18f675e`，來源提交 `18f675e84aa684756f8db8100111001917b6fbb2`。
+- [Release 說明與還原步驟](https://github.com/yiying010/yiying010.github.io/releases/tag/backup-2026-10-28-18f675e)
+- [下載完整網站備份 ZIP](https://github.com/yiying010/yiying010.github.io/releases/download/backup-2026-10-28-18f675e/yiying-website-backup-2026-10-28-18f675e.zip)（包含網站、四張圖片與維護說明）。
+
+還原時先備份目前版本，再解壓縮上述 ZIP，將同一份備份的 `index.html`、`assets/`、`README.md` 與 `website-maintenance-guide.md` 放回儲存庫 `main` 分支根目錄並提交；等待 GitHub Pages 部署成功後確認正式網站。詳細操作與校驗碼請見[維護說明第 9 節](website-maintenance-guide.md#9-常見問題與還原方式)。
+
+這是固定日期的歷史備份，不會自動包含後續修改，也不包含這次新增的下載連結。之後更新請先取得 `main` 的最新內容。
+
 ## 檔案
 
 - `index.html`：更新個人定位、響應式版面、無障礙導覽、搜尋與分享資訊。
