@@ -115,6 +115,7 @@
     .experience-item ul { padding-left: 19px; margin: 0; color: var(--muted); font-size: 15px; }
     .experience-item li + li { margin-top: 6px; }
     .projects-section { border-top: 1px solid var(--line); }
+    .project-list { display: grid; gap: 28px; }
     .project-card { border: 1px solid var(--line); background: var(--white); border-radius: var(--radius); overflow: hidden; display: grid; grid-template-columns: 1fr 1.15fr; }
     .project-visual { display: flex; flex-direction: column; background: #e9efec; padding: 28px; border-right: 1px solid var(--line); }
     .project-visual-header { display: flex; justify-content: space-between; gap: 12px; color: #476d62; font: 10px/1.6 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .1em; }
@@ -122,10 +123,10 @@
     .project-preview img { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 9px; }
     .project-preview:hover img { border-color: var(--teal); }
     .project-visual figcaption { color: #526c62; font-size: 12px; }
-    .project-content { padding: 36px; }
+    .project-content { min-width: 0; padding: 36px; }
     .project-type { font: 11px/1.6 ui-monospace, SFMono-Regular, Consolas, monospace; color: var(--teal); letter-spacing: .08em; margin-bottom: 12px; }
     .project-content h3 { font-size: clamp(22px, 2.5vw, 27px); margin-bottom: 22px; }
-    .project-content p { color: var(--muted); font-size: 14px; }
+    .project-content p { color: var(--muted); font-size: 16px; }
     .project-content .tags { margin-top: 22px; }
     .project-links { display: flex; gap: 12px; flex-wrap: wrap; padding-top: 23px; margin-top: 23px; border-top: 1px solid var(--line); }
     .project-process { display: grid; grid-template-columns: repeat(4, 1fr); padding: 0; list-style: none; margin: 24px 0 0; border: 1px solid var(--line); border-radius: 10px; }
@@ -386,13 +387,45 @@
 
     <section class="section projects-section" id="projects" aria-labelledby="projects-title">
       <div class="wrap">
-        <div class="section-heading"><div><p class="eyebrow">04 / Selected Project</p><h2 id="projects-title">讓想法落地的專案</h2></div><p class="section-intro">結合活動設計、需求整理與實際測試，將教學概念轉化為可操作的數位成果。</p></div>
-        <article class="project-card">
-          <figure class="project-visual"><div class="project-visual-header"><span>PROJECT / 01</span><span>EDUCATION × AI</span></div><a class="project-preview" href="https://fishbone-cave-yiying.s9551830.chatgpt.site/" target="_blank" rel="noopener noreferrer" aria-label="開啟魚骨洞天互動 Demo（另開視窗）"><img src="assets/project-01.png" alt="魚骨洞天互動式教學活動網頁的起始畫面" width="2888" height="1556" loading="lazy"></a><figcaption>魚骨洞天 · 互動式教學活動網頁</figcaption></figure>
-          <div class="project-content"><p class="project-type">魚骨洞天 / 教育活動 / AI 應用</p><h3>AI 輔助互動式<br>教學活動網頁製作</h3><p>依研究計畫與教學活動需求，將既有活動流程與內容整理後，運用生成式 AI 與 Codex 協助製作可實際操作的互動式網頁。</p><p>專案過程包含活動流程規劃、功能需求整理、介面與操作方式調整、功能測試及使用情境驗證，並依實際操作結果持續修正與優化。</p><ul class="tags" aria-label="專案使用工具與方法"><li>Generative AI</li><li>Codex</li><li>需求整理</li><li>功能測試</li></ul>
-            <div class="project-links" aria-label="專案連結"><a class="button primary" href="https://fishbone-cave-yiying.s9551830.chatgpt.site/" target="_blank" rel="noopener noreferrer">體驗 Demo <span aria-hidden="true">↗</span></a><a class="button" href="https://github.com/yiying010/fishbone" target="_blank" rel="noopener noreferrer">GitHub Repository <span aria-hidden="true">↗</span></a></div>
-          </div>
-        </article>
+        <div class="section-heading"><div><p class="eyebrow">04 / Selected Projects</p><h2 id="projects-title">讓想法落地的專案</h2></div><p class="section-intro">從教學活動到互動履歷，透過內容整理、需求規劃與 AI 工具應用，將想法轉化為可探索、可操作的數位成果。</p></div>
+        <div class="project-list">
+          <article class="project-card" id="project-seven-isles" aria-labelledby="seven-isles-title">
+            <figure class="project-visual">
+              <div class="project-visual-header"><span>PROJECT / 01</span><span>EDUCATION × INTERACTION</span></div>
+              <a class="project-preview" href="https://fishbone-seven-isles.s9551830.chatgpt.site/" target="_blank" rel="noopener noreferrer" aria-label="體驗魚骨洞天七關版（另開視窗）"><img src="assets/fishbone-seven-isles.jpg" alt="魚骨洞天七關版群島全景，包含集合港、問題分析與成果碼頭等關卡" width="704" height="523" loading="lazy"></a>
+              <figcaption>魚骨洞天七關版 · 以群島航線探索教學活動</figcaption>
+            </figure>
+            <div class="project-content">
+              <p class="project-type">魚骨洞天七關版 / 教學流程 / 互動體驗</p>
+              <h3 id="seven-isles-title">魚骨洞天｜七關解題冒險</h3>
+              <p>將既有的 19 步創造力與問題分析活動，以七座關卡島嶼呈現。從集合港出發，依序探索生活困擾、界定問題、分析原因、設定目標與發想解法，最後整理投票、反思與雙向魚骨圖成果。</p>
+              <p>負責活動流程規劃與功能需求整理，運用生成式 AI 與 Codex 協助製作，並從使用情境測試及調整介面與操作流程，讓教學內容轉化為可實際探索的網頁體驗。</p>
+              <ul class="tags" aria-label="七關版使用工具與方法"><li>教學流程設計</li><li>需求整理</li><li>AI 輔助製作</li><li>功能測試</li></ul>
+              <div class="project-links" aria-label="魚骨洞天七關版連結"><a class="button primary" href="https://fishbone-seven-isles.s9551830.chatgpt.site/" target="_blank" rel="noopener noreferrer">體驗七關版</a></div>
+            </div>
+          </article>
+          <article class="project-card" id="project-resume-island" aria-labelledby="resume-island-title">
+            <figure class="project-visual">
+              <div class="project-visual-header"><span>PROJECT / 02</span><span>PORTFOLIO × INTERACTION</span></div>
+              <a class="project-preview" href="https://yiying-portfolio.s9551830.chatgpt.site/" target="_blank" rel="noopener noreferrer" aria-label="探索依瑩的履歷島（另開視窗）"><img src="assets/resume-island.jpg" alt="依瑩的履歷島群島全景，以中央導覽港串連主打作品與三項工作經驗" width="704" height="396" loading="lazy"></a>
+              <figcaption>依瑩的履歷島 · 以互動群島閱讀經歷與作品</figcaption>
+            </figure>
+            <div class="project-content">
+              <p class="project-type">依瑩的履歷島 / 個人作品集 / 資訊整理</p>
+              <h3 id="resume-island-title">依瑩的履歷島｜互動式個人作品集</h3>
+              <p>將研究計畫、教育實驗與教師培訓、系統驗證及 AI 數位應用等經驗，整理成可探索的個人作品集，以中央導覽港串連不同主題島嶼。</p>
+              <p>整合經歷內容、分類架構與導覽流程，搭配 3D 群島、文字地點清單、搜尋及分類篩選，讓訪客依興趣閱讀內容，並可進一步體驗魚骨洞天七關版。</p>
+              <ul class="tags" aria-label="履歷島呈現的能力"><li>資訊架構</li><li>內容整理</li><li>互動流程規劃</li><li>網頁製作</li></ul>
+              <div class="project-links" aria-label="履歷島連結"><a class="button primary" href="https://yiying-portfolio.s9551830.chatgpt.site/" target="_blank" rel="noopener noreferrer">探索履歷島</a></div>
+            </div>
+          </article>
+          <article class="project-card" id="project-fishbone-original" aria-labelledby="fishbone-original-title">
+            <figure class="project-visual"><div class="project-visual-header"><span>PROJECT / 03</span><span>EDUCATION × AI</span></div><a class="project-preview" href="https://fishbone-cave-yiying.s9551830.chatgpt.site/" target="_blank" rel="noopener noreferrer" aria-label="體驗原版魚骨洞天（另開視窗）"><img src="assets/project-01.png" alt="原版魚骨洞天互動式教學活動網頁的起始畫面" width="2888" height="1556" loading="lazy"></a><figcaption>原版魚骨洞天 · 互動式教學活動網頁</figcaption></figure>
+            <div class="project-content"><p class="project-type">原版魚骨洞天 / 教育活動 / AI 應用</p><h3 id="fishbone-original-title">原版魚骨洞天｜AI 輔助教學活動網頁</h3><p>依研究計畫與教學活動需求，將既有活動流程與內容整理後，運用生成式 AI 與 Codex 協助製作可實際操作的互動式網頁。</p><p>專案過程包含活動流程規劃、功能需求整理、介面與操作方式調整、功能測試及使用情境驗證，並依實際操作結果持續修正與優化。</p><ul class="tags" aria-label="原版專案使用工具與方法"><li>Generative AI</li><li>Codex</li><li>需求整理</li><li>功能測試</li></ul>
+              <div class="project-links" aria-label="原版魚骨洞天連結"><a class="button primary" href="https://fishbone-cave-yiying.s9551830.chatgpt.site/" target="_blank" rel="noopener noreferrer">體驗原版</a><a class="button" href="https://github.com/yiying010/fishbone" target="_blank" rel="noopener noreferrer">GitHub Repository</a></div>
+            </div>
+          </article>
+        </div>
         <ol class="project-process" aria-label="專案執行流程"><li><span aria-hidden="true">01</span>活動流程規劃</li><li><span aria-hidden="true">02</span>功能需求整理</li><li><span aria-hidden="true">03</span>介面與操作調整</li><li><span aria-hidden="true">04</span>測試驗證與優化</li></ol>
       </div>
     </section>

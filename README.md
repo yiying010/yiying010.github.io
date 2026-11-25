@@ -22,7 +22,9 @@
 - `index.html`：更新個人定位、響應式版面、無障礙導覽、搜尋與分享資訊。
 - `assets/profile.jpg`：使用者提供的個人形象照，保存為本地資源；原始照片不另行修圖，僅透過 CSS 調整顯示裁切。
 - `assets/avatar.png`：使用者提供的似顏繪，作為導覽列 Logo；以 CSS 聚焦頭肩，維持原桌機 36px、手機 31px 的 1:1 尺寸與圓角，使用 `object-fit: cover`，原圖不另行修圖。
-- `assets/project-01.png`：使用者提供的魚骨洞天專案畫面，可點擊開啟 Demo。
+- `assets/project-01.png`：原版魚骨洞天專案畫面，可點擊開啟原版 Demo。
+- `assets/fishbone-seven-isles.jpg`：魚骨洞天七關版的實際群島全景截圖。
+- `assets/resume-island.jpg`：履歷島的實際群島全景截圖（704 × 396）。
 - `assets/teacher-training.png`：使用者提供的 AI 教學代理人設計教師培訓現場照片，保留完整畫面。
 - `README.md`：專案概覽、預覽方式與維護說明入口。
 - `website-maintenance-guide.md`：文字與照片更新、新增專案、重新部署及常見問題的完整操作指南。
@@ -55,14 +57,24 @@ python3 -m http.server 8000 --bind 127.0.0.1
 
 ## 專案、照片與聯絡資訊
 
-- 專案 Demo：https://fishbone-cave-yiying.s9551830.chatgpt.site/
+- 魚骨洞天七關版：https://fishbone-seven-isles.s9551830.chatgpt.site/
+- 依瑩的履歷島：https://yiying-portfolio.s9551830.chatgpt.site/
+- 原版魚骨洞天 Demo（保留）：https://fishbone-cave-yiying.s9551830.chatgpt.site/
 - 專案 GitHub Repository：https://github.com/yiying010/fishbone
 - 已放入使用者指定的專案畫面與教師培訓現場照片。
 - 聯絡電話更新為 `0923737519`，使用 `tel:` 可點擊撥號。
 - 已移除 RELATED CHANNEL / YouTube 相關頻道欄位。
 - 技術標籤保留已確認的 Generative AI、Codex、需求整理與功能測試；若需增加其他技術，請先確認實際使用情形。
 
-## 本次交付與驗證結果
+## 2026-11-25 專案成果更新
+
+Projects 依序呈現「魚骨洞天七關版」、「依瑩的履歷島」與「原版魚骨洞天」，各自附上實際截圖及對應 Demo。原有 GitHub Repository 按鈕保留於原版卡片；新作品未加入尚未確認的程式碼連結。
+
+卡片使用 `.project-list` 排列，桌機呈現圖片與文字雙欄，手機自動改為上下排列；圖片保留原始比例。維護時可用 `project-seven-isles`、`project-resume-island`、`project-fishbone-original` 定位。
+
+2026-10-28 Release 為歷史備份，不包含本次新增的兩項作品與截圖。
+
+## 原版交付與驗證結果
 
 網站發布沿用原儲存庫的 GitHub Pages 設定；部署狀態可在儲存庫 Actions 與 Deployments 查看。
 

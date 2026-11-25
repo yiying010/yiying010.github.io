@@ -1,6 +1,6 @@
 # 林依瑩個人網站維護說明
 
-適用版本：2026-10-28 上線版。網站沿用原生 HTML、CSS 與少量 JavaScript，日常更新不需要安裝 npm 套件或執行 build。
+適用版本：2026-11-25 專案成果更新版（沿用 2026-10-28 網站架構）。網站沿用原生 HTML、CSS 與少量 JavaScript，日常更新不需要安裝 npm 套件或執行 build。
 
 ## 1. 先找到正確的檔案
 
@@ -13,6 +13,9 @@
 | 圖片資料夾 | [assets](https://github.com/yiying010/yiying010.github.io/tree/main/assets) |
 | 部署進度 | [Actions](https://github.com/yiying010/yiying010.github.io/actions) |
 | 已發布備份 | [2026-10-28 Release 與還原步驟](https://github.com/yiying010/yiying010.github.io/releases/tag/backup-2026-10-28-18f675e)／[下載完整備份 ZIP](https://github.com/yiying010/yiying010.github.io/releases/download/backup-2026-10-28-18f675e/yiying-website-backup-2026-10-28-18f675e.zip) |
+| 魚骨洞天七關版 | [七關解題冒險](https://fishbone-seven-isles.s9551830.chatgpt.site/) |
+| 依瑩的履歷島 | [互動式個人作品集](https://yiying-portfolio.s9551830.chatgpt.site/) |
+| 原版魚骨洞天 | [原版 Demo](https://fishbone-cave-yiying.s9551830.chatgpt.site/) |
 | 魚骨洞天作品程式 | [yiying010/fishbone](https://github.com/yiying010/fishbone) |
 
 個人網站的檔案結構如下：
@@ -21,10 +24,13 @@
 yiying010.github.io/
 ├── index.html                  網頁文字、版面樣式、手機選單
 ├── README.md                   專案說明與預覽方式
+├── website-maintenance-guide.md 完整維護說明
 └── assets/
     ├── avatar.png              左上角似顏繪 Logo
     ├── profile.jpg             首頁個人形象照
-    ├── project-01.png          魚骨洞天專案截圖
+    ├── project-01.png          原版魚骨洞天專案截圖
+    ├── fishbone-seven-isles.jpg 七關版群島截圖
+    ├── resume-island.jpg       履歷島群島截圖
     └── teacher-training.png    教師培訓現場照片
 ```
 
@@ -111,7 +117,9 @@ GitHub 網頁編輯器的 Preview 不等於完整網站的瀏覽器預覽；排�
 | --- | --- | --- |
 | 導覽列 Logo | `assets/avatar.png` | 1:1 裁切；桌機 36px、手機 31px |
 | 首頁個人照 | `assets/profile.jpg` | `object-fit: cover`；手機顯示圓形頭像 |
-| 魚骨洞天截圖 | `assets/project-01.png` | 等比例完整顯示 |
+| 原版魚骨洞天截圖 | `assets/project-01.png` | 等比例完整顯示 |
+| 七關版群島截圖 | `assets/fishbone-seven-isles.jpg` | 等比例完整顯示，704 × 523 |
+| 履歷島群島截圖 | `assets/resume-island.jpg` | 等比例完整顯示，704 × 396 |
 | 教師培訓照片 | `assets/teacher-training.png` | 等比例完整顯示 |
 
 用新圖片取代同一路徑的檔案，即可沿用目前的圖片連結。請保留正確的檔案格式；例如 JPEG 圖片不能只把副檔名改成 `.png` 當作轉檔。
@@ -156,34 +164,34 @@ GitHub 網頁編輯器的 Preview 不等於完整網站的瀏覽器預覽；排�
 
 ### 第二步：找到插入位置
 
-搜尋 `id="projects"`。目前結構為：
+搜尋 `id="projects"`。目前三張卡片放在 `.project-list` 內，順序及定位如下：
+
+| 卡片 | 定位 ID | 對應截圖 |
+| --- | --- | --- |
+| 魚骨洞天七關版 | `project-seven-isles` | `assets/fishbone-seven-isles.jpg` |
+| 依瑩的履歷島 | `project-resume-island` | `assets/resume-island.jpg` |
+| 原版魚骨洞天 | `project-fishbone-original` | `assets/project-01.png` |
 
 ```html
 <section class="section projects-section" id="projects" ...>
   <div class="wrap">
     <!-- 區塊標題 -->
-    <article class="project-card">
-      <!-- 原本的魚骨洞天專案 -->
-    </article>
+    <div class="project-list">
+      <article class="project-card" id="project-seven-isles">...</article>
+      <article class="project-card" id="project-resume-island">...</article>
+      <article class="project-card" id="project-fishbone-original">...</article>
+      <!-- 將新卡片貼在這裡，仍在 project-list 裡面。 -->
+    </div>
     <ol class="project-process">
-      <!-- 原本專案的四個流程 -->
+      <!-- 共用的四個執行流程 -->
     </ol>
-
-    <!-- 將新專案卡片貼在這裡，仍在 wrap 和 section 裡面。 -->
   </div>
 </section>
 ```
 
-以上是定位示意，省略號與註解不需要取代原本程式碼。新增卡片時，不要重複新增 `id="projects"`，也不要刪除區塊結尾的 `</div>`、`</section>`。
+以上是定位示意，省略號與註解不需要取代原本程式碼。`.project-list` 已提供卡片間距；新增卡片時不需另外加入 margin。每張卡片若有 `id`、標題 `id` 與 `aria-labelledby`，請一起改為新的唯一名稱，不要重複使用 `id="projects"` 或既有 ID。
 
-為了讓卡片之間留白，可在原檔案的 `<style>` 區塊內、其他專案樣式旁，加入一次：
-
-```css
-.project-process + .project-card,
-.project-card + .project-card {
-  margin-top: 32px;
-}
-```
+三個 Demo 各有自己的截圖連結與按鈕；更換網址時兩處要一起修改。原版連結保持 `https://fishbone-cave-yiying.s9551830.chatgpt.site/`，七關版使用 `https://fishbone-seven-isles.s9551830.chatgpt.site/`。既有 GitHub Repository 按鈕位於原版卡片；只有確認新作品對應的 Repository 後，才新增其程式碼連結。
 
 ### 第三步：貼上新專案範例
 
@@ -347,7 +355,7 @@ shasum -a 256 yiying-website-backup-2026-10-28-18f675e.zip
 f4ec25f0ee3231afd8601bc2e1a3e5d420c294384780e9d883830b2cbd4044d3
 ```
 
-這是固定日期的歷史備份，不會自動包含後續修改，也不包含這次新增的下載連結。還原前請記下 Release 網址；日常更新仍以 `main` 的最新內容為準。這次僅補充文件入口，已發布的 ZIP 保持原檔與原校驗碼。
+這是 2026-10-28 的歷史備份，不包含後續新增的備份下載連結、履歷島、魚骨洞天七關版及其截圖。還原前請記下 Release 網址；日常更新仍以 `main` 的最新內容為準。這次僅補充文件入口，已發布的 ZIP 保持原檔與原校驗碼。
 
 本指南整理時的已驗證版本為 [`1fef97b`](https://github.com/yiying010/yiying010.github.io/commit/1fef97b5d8f1dee70013203bb55ecfa0736ea90f)，[對應部署紀錄](https://github.com/yiying010/yiying010.github.io/actions/runs/40619542714)已成功。之後若有新修改，請以新的成功版本作為備份基準。
 
