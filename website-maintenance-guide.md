@@ -12,7 +12,8 @@
 | 首頁主檔 | [index.html](https://github.com/yiying010/yiying010.github.io/blob/main/index.html) |
 | 圖片資料夾 | [assets](https://github.com/yiying010/yiying010.github.io/tree/main/assets) |
 | 部署進度 | [Actions](https://github.com/yiying010/yiying010.github.io/actions) |
-| 已發布備份 | [2026-10-28 Release 與還原步驟](https://github.com/yiying010/yiying010.github.io/releases/tag/backup-2026-10-28-18f675e)／[下載完整備份 ZIP](https://github.com/yiying010/yiying010.github.io/releases/download/backup-2026-10-28-18f675e/yiying-website-backup-2026-10-28-18f675e.zip) |
+| 最新備份 | [2026-11-25 Release 與還原步驟](https://github.com/yiying010/yiying010.github.io/releases/tag/backup-2026-11-25)／[下載完整備份 ZIP](https://github.com/yiying010/yiying010.github.io/releases/download/backup-2026-11-25/yiying-website-backup-2026-11-25.zip) |
+| 歷史備份 | [2026-10-28 Release 與還原步驟](https://github.com/yiying010/yiying010.github.io/releases/tag/backup-2026-10-28-18f675e)／[下載完整備份 ZIP](https://github.com/yiying010/yiying010.github.io/releases/download/backup-2026-10-28-18f675e/yiying-website-backup-2026-10-28-18f675e.zip) |
 | 魚骨洞天七關版 | [七關解題冒險](https://fishbone-seven-isles.s9551830.chatgpt.site/) |
 | 依瑩的履歷島 | [互動式個人作品集](https://yiying-portfolio.s9551830.chatgpt.site/) |
 | 原版魚骨洞天 | [原版 Demo](https://fishbone-cave-yiying.s9551830.chatgpt.site/) |
@@ -329,6 +330,29 @@ git push origin main
 
 需要還原時，可從先前備份取出正確檔案，或在 GitHub 的檔案 History／提交歷史中找到之前版本，再將同一版本的 HTML 與對應圖片重新提交至 `main`。這樣能保留修改歷史，也會再次觸發部署。
 
+### 使用最新備份：2026-11-25
+
+- 版本標籤：`backup-2026-11-25`（Asia/Taipei）。
+- [Release 說明頁](https://github.com/yiying010/yiying010.github.io/releases/tag/backup-2026-11-25)／[下載完整網站備份 ZIP](https://github.com/yiying010/yiying010.github.io/releases/download/backup-2026-11-25/yiying-website-backup-2026-11-25.zip)。
+- 內容：`index.html`、`assets/` 六張圖片、`README.md`、本指南、`BACKUP-INFO.txt` 與 `SHA256SUMS.txt`。
+- 專案區包含履歷島、魚骨洞天七關版及原版魚骨洞天；原版連結與 Repository 入口均保留。
+
+1. 先下載目前 `main` 的原始碼，保留還原前的版本。
+2. 在上述 Release 的 **Assets** 下載 `yiying-website-backup-2026-11-25.zip`，並解壓縮。
+3. 閱讀 `BACKUP-INFO.txt` 核對日期、來源提交與範圍。可依第 6 節先啟動本機預覽。
+4. 將備份中的 `index.html`、完整 `assets/`、`README.md` 與 `website-maintenance-guide.md` 放回原儲存庫 `main` 分支根目錄並提交。用 GitHub 網頁上傳時先提交圖片，再提交首頁及文件；保留原有 Pages 設定及不相關檔案。
+5. 依第 7、8 節等待 Pages 部署成功，再確認三個專案、六張圖片與各作品入口。
+
+確認下載 ZIP 的完整性：
+
+```sh
+shasum -a 256 yiying-website-backup-2026-11-25.zip
+```
+
+將結果與 Release 說明及 Assets 顯示的 SHA-256 比對。解壓縮後，在備份資料夾執行 `shasum -a 256 -c SHA256SUMS.txt`，可逐檔驗證內容。
+
+這份 ZIP 可還原個人網站。履歷島、魚骨洞天七關版及原版活動為外部網站，此備份保存其入口與截圖；各活動的原始碼、帳戶設定及執行資料需在其所屬專案另行備份。不要將 ZIP 本身直接當作 GitHub Pages 首頁上傳。
+
 ### 使用 2026-10-28 Release 備份還原
 
 - 備份日期：2026-10-28（Asia/Taipei）。
@@ -355,9 +379,9 @@ shasum -a 256 yiying-website-backup-2026-10-28-18f675e.zip
 f4ec25f0ee3231afd8601bc2e1a3e5d420c294384780e9d883830b2cbd4044d3
 ```
 
-這是 2026-10-28 的歷史備份，不包含後續新增的備份下載連結、履歷島、魚骨洞天七關版及其截圖。還原前請記下 Release 網址；日常更新仍以 `main` 的最新內容為準。這次僅補充文件入口，已發布的 ZIP 保持原檔與原校驗碼。
+這是 2026-10-28 的歷史備份，不包含後續新增的備份下載連結、履歷島、魚骨洞天七關版及其截圖。此歷史 ZIP 保持原檔與原校驗碼；若要還原包含兩個新作品的版本，請選擇上方 2026-11-25 備份。
 
-本指南整理時的已驗證版本為 [`1fef97b`](https://github.com/yiying010/yiying010.github.io/commit/1fef97b5d8f1dee70013203bb55ecfa0736ea90f)，[對應部署紀錄](https://github.com/yiying010/yiying010.github.io/actions/runs/40619542714)已成功。之後若有新修改，請以新的成功版本作為備份基準。
+原版網站的已驗證版本為 [`1fef97b`](https://github.com/yiying010/yiying010.github.io/commit/1fef97b5d8f1dee70013203bb55ecfa0736ea90f)，[對應部署紀錄](https://github.com/yiying010/yiying010.github.io/actions/runs/40619542714)已成功。2026-11-25 新增作品的網站版本為 [`6acd563`](https://github.com/yiying010/yiying010.github.io/commit/6acd56376b1aa924a58eca85f05583d15cf16c2f)，[部署紀錄](https://github.com/yiying010/yiying010.github.io/actions/runs/45545735170)已成功；最新備份同時包含此次更新後的 README 與本指南，完整來源提交記錄於 Release 及 `BACKUP-INFO.txt`。之後若有新修改，請以新的成功版本作為備份基準。
 
 ## 10. 交給 Codex 協助時，可直接使用的描述
 

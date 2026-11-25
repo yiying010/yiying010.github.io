@@ -8,14 +8,22 @@
 
 ## 網站備份下載與還原
 
-- 備份日期：2026-10-28（Asia/Taipei）。
-- 備份版本：`backup-2026-10-28-18f675e`，來源提交 `18f675e84aa684756f8db8100111001917b6fbb2`。
-- [Release 說明與還原步驟](https://github.com/yiying010/yiying010.github.io/releases/tag/backup-2026-10-28-18f675e)
-- [下載完整網站備份 ZIP](https://github.com/yiying010/yiying010.github.io/releases/download/backup-2026-10-28-18f675e/yiying-website-backup-2026-10-28-18f675e.zip)（包含網站、四張圖片與維護說明）。
+### 最新備份：2026-11-25
 
-還原時先備份目前版本，再解壓縮上述 ZIP，將同一份備份的 `index.html`、`assets/`、`README.md` 與 `website-maintenance-guide.md` 放回儲存庫 `main` 分支根目錄並提交；等待 GitHub Pages 部署成功後確認正式網站。詳細操作與校驗碼請見[維護說明第 9 節](website-maintenance-guide.md#9-常見問題與還原方式)。
+- 版本：`backup-2026-11-25`（Asia/Taipei）。
+- [Release 說明與還原步驟](https://github.com/yiying010/yiying010.github.io/releases/tag/backup-2026-11-25)
+- [下載完整網站備份 ZIP](https://github.com/yiying010/yiying010.github.io/releases/download/backup-2026-11-25/yiying-website-backup-2026-11-25.zip)
+- 包含目前網站、六張圖片、README 與維護說明；專案區保留履歷島、魚骨洞天七關版及原版入口。
 
-這是固定日期的歷史備份，不會自動包含後續修改，也不包含這次新增的下載連結。之後更新請先取得 `main` 的最新內容。
+還原時先備份目前版本，再解壓縮 ZIP，將同一份備份的 `index.html`、`assets/`、`README.md` 與 `website-maintenance-guide.md` 放回儲存庫 `main` 分支根目錄並提交；等待 GitHub Pages 部署成功後確認正式網站。完整來源提交、ZIP 校驗碼及還原指引記錄於 Release；詳細操作亦可參閱[維護說明第 9 節](website-maintenance-guide.md#9-常見問題與還原方式)。
+
+這份 ZIP 備份的是個人網站，外部互動作品以連結保留；履歷島與魚骨洞天活動本身的程式碼及資料需在其所屬專案另行備份。固定版本不會自動包含後續修改，日常更新請先取得 `main` 的最新內容。
+
+### 歷史備份：2026-10-28
+
+- 版本：`backup-2026-10-28-18f675e`，來源提交 `18f675e84aa684756f8db8100111001917b6fbb2`。
+- [歷史 Release](https://github.com/yiying010/yiying010.github.io/releases/tag/backup-2026-10-28-18f675e)／[下載歷史 ZIP](https://github.com/yiying010/yiying010.github.io/releases/download/backup-2026-10-28-18f675e/yiying-website-backup-2026-10-28-18f675e.zip)。
+- 此版本不包含 2026-11-25 新增的兩項作品與截圖。
 
 ## 檔案
 
